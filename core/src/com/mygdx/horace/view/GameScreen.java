@@ -207,6 +207,10 @@ public class GameScreen implements Screen, IView, InputProcessor {
 					else if (textureName == "end_trigger") {
 						clip.setCollisionArea(new Rectangle(0, 0, clip.getWidth(), clip.getHeight()));
 					}
+					else if (textureName == "tree") {
+						System.out.println("tree");
+						clip.setCollisionArea(new Rectangle(0, 0, clip.getWidth(), 10));
+					}
 
 					textureName = "";
 				}
@@ -455,7 +459,7 @@ public class GameScreen implements Screen, IView, InputProcessor {
 
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-		if (screenX > GAME_WORLD_WIDTH / 2) {
+		if (screenX > Gdx.graphics.getWidth() / 2) {
 			horace.moveRight();
 		}
 		else {
